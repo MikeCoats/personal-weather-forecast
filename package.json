@@ -15,8 +15,13 @@
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/MikeCoats/personal-weather-forecast",
   "bugs": {
-    "url" : "https://github.com/MikeCoats/personal-weather-forecast/issues",
+    "url": "https://github.com/MikeCoats/personal-weather-forecast/issues",
     "email": "i.am@mikecoats.com"
   },
-  "repository": "github:MikeCoats/personal-weather-forecast"
+  "repository": "github:MikeCoats/personal-weather-forecast",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "twilio": "^3.23.1"
+  }
 }
