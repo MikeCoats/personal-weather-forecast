@@ -23,5 +23,8 @@
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
     "twilio": "^3.23.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0"
   }
 }
