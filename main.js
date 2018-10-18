@@ -19,7 +19,6 @@ if (
   !twilioFrom ||
   !twilioTo
 ) {
-
   // Log the error.
   console.error(
     'All of the DARKSKY_KEY, DARKSKY_LATLONG, TWILIO_ACCOUNT, TWILIO_TOKEN, ' +
@@ -69,9 +68,17 @@ const generateDailySummary = daily => {
   const feelMin = Math.floor(daily.apparentTemperatureMin);
   const feelMax = Math.floor(daily.apparentTemperatureMax);
 
-  // Get the chance of rain, or if it's not rain, what it is.
+  // Get the chance of rain, or whatever.
   const precipChance = Math.floor(daily.precipProbability * 100.0);
-  const precipKind = daily.precipType;
+
+  // Get the forecasted falling wet stuff.
+  let precipKind = daily.precipType;
+
+  // Check that they've told us what it is.
+  if (!precipKind) {
+    // Normally if there's 0% chance of anything, a sensible default is rain.
+    precipKind = 'rain';
+  }
 
   // Get the sunrise and sunset times and apply the BST/DST offest to them.
   const sunrise = new Date(
